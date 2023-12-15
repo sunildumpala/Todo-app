@@ -17,6 +17,7 @@ form.addEventListener('submit', function(e){
   removeButton.textContent = "Remove Todo";
 
   doneButton.addEventListener("click", handleDone);
+  removeButton.addEventListener("click", handleRemove);
 
 
   newTodo.append(doneButton);
@@ -34,4 +35,15 @@ function handleDone(event) {
   divEl.style.textDecoration = "line-through";
 
 
+}
+
+function handleRemove(event)
+{
+  console.log("Made it to handleRemove funct: ");
+  let parentEl = event.target.parentElement;
+  console.log(parentEl);
+  let ulEl = parentEl.parentElement;
+  console.log(ulEl);
+  parentEl.remove();
+  
 }
